@@ -1,0 +1,123 @@
+/* styles for the Skills component */
+.skills-section {
+    padding: 60px 20px;
+    text-align: center;
+    background: #fff;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out;
+}
+
+.skills-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.skills-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: #333;
+    animation: fadeInUp 1.5s ease-in-out;
+}
+
+.skills-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.skill {
+    width: 80%;
+    max-width: 600px;
+}
+
+.skill-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.skill-name {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #333;
+}
+
+.skill-level {
+    font-size: 1em;
+    color: #555;
+}
+
+.skill-bar {
+    background: #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    height: 20px;
+    width: 100%;
+}
+
+.skill-bar-level {
+    height: 100%;
+    transition: width 1.5s ease-in-out;
+    border-radius: 10px;
+}
+
+/* Different colors for each skill bar */
+.skill-bar-0 {
+    background: linear-gradient(90deg, #ff7e5f, #feb47b); /* JavaScript */
+}
+
+.skill-bar-1 {
+    background: linear-gradient(90deg, #43cea2, #185a9d); /* React */
+}
+
+.skill-bar-2 {
+    background: linear-gradient(90deg, #ff512f, #dd2476); /* Node.js */
+}
+
+.skill-bar-3 {
+    background: linear-gradient(90deg, #00c6ff, #0072ff); /* HTML & CSS */
+}
+
+.skill-bar-4 {
+    background: linear-gradient(90deg, #f7971e, #ffd200); /* Python */
+}
+
+.skill-bar-5 {
+    background: linear-gradient(90deg, #8e2de2, #4a00e0); /* Java */
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideInRight {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+}
+
+.skill-bar-level {
+    animation: slideInRight 2s ease-in-out;
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+    .skill {
+        width: 70%;
+    }
+}
+
+@media (min-width: 992px) {
+    .skill {
+        width: 60%;
+    }
+}

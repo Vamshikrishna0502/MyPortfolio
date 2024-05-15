@@ -1,0 +1,104 @@
+/* src/AboutMe.css */
+.about-section {
+  background: linear-gradient(to right, #f7f7f7, #ffffff);
+  padding: 50px 20px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInSection 1s ease-in-out forwards;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes fadeInSection {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.title, .info {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.info {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  text-align: start;
+  max-width: 600px;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.title.fade-in {
+  animation: fadeInTitle 1s ease-in-out forwards;
+}
+
+@keyframes fadeInTitle {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.info.fade-in {
+  animation: fadeInInfo 1s ease-in-out forwards;
+}
+
+@keyframes fadeInInfo {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+  .info {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.5rem;
+  }
+  .info {
+    font-size: 0.9rem;
+  }
+}
+
+.highlight {
+  color: #b73da3; /* Teal */
+  font-weight: bold;
+  font-size: 24px;
+}

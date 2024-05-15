@@ -1,0 +1,154 @@
+/* styles for the Contact component */
+.contact-section {
+    padding: 60px 20px;
+    text-align: center;
+    background: #f7f7f7;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out;
+}
+
+.contact-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.contact-title {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #333;
+    opacity: 0;
+    transform: scale(0.3);
+    transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out;
+}
+
+.contact-section.visible .contact-title {
+    opacity: 1;
+    transform: scale(1);
+    animation: bounceIn 1.5s ease-in-out;
+}
+
+.description {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    color: #555;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0;
+    transform: perspective(400px) rotateX(90deg);
+    transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out;
+}
+
+.contact-section.visible .description {
+    opacity: 1;
+    transform: perspective(400px);
+    animation: flipInX 1.5s ease-in-out;
+}
+
+.social-media {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    opacity: 0;
+    transform: scale(0.3);
+    transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out;
+}
+
+.contact-section.visible .social-media {
+    opacity: 1;
+    transform: scale(1);
+    animation: zoomIn 1.5s ease-in-out;
+}
+
+.icon {
+    font-size: 2.5em;
+    color: #333;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.icon:hover {
+    color: #007bff;
+    transform: scale(1.1);
+}
+
+.linkedin:hover {
+    color: #0e76a8;
+}
+
+.github:hover {
+    color: #333;
+}
+
+.email:hover {
+    color: #d44638;
+}
+
+/* Animations */
+@keyframes bounceIn {
+    from {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+    70% {
+        transform: scale(0.9);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes flipInX {
+    from {
+        transform: perspective(400px) rotateX(90deg);
+        opacity: 0;
+    }
+    40% {
+        transform: perspective(400px) rotateX(-10deg);
+        opacity: 1;
+    }
+    70% {
+        transform: perspective(400px) rotateX(10deg);
+    }
+    to {
+        transform: perspective(400px);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    50% {
+        opacity: 1;
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+    .contact-section .description {
+        font-size: 1.4em;
+    }
+
+    .icon {
+        font-size: 3em;
+    }
+}
+
+@media (min-width: 992px) {
+    .contact-section .description {
+        font-size: 1.6em;
+    }
+
+    .icon {
+        font-size: 3.5em;
+    }
+}
